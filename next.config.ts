@@ -1,9 +1,10 @@
 import type { NextConfig } from "next";
 
+// Fully static site (out/): content + client-side game engine, no server needed.
 const nextConfig: NextConfig = {
-  /* config options here */
-  cacheComponents: true,
-  partialPrefetching: true,
+  output: "export",
+  trailingSlash: true,
+  images: { unoptimized: true },
   turbopack: {
     rules: {
       "*.css": {
